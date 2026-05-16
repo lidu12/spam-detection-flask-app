@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spam Detector</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>📩 Spam Detection App</h1>
+
+    <form method="POST">
+        <input type="text" name="message" placeholder="Enter your message..." required>
+        <button type="submit">Check</button>
+    </form>
+
+    {% if result %}
+        <div class="result">{{ result }}</div>
+    {% endif %}
+</div>
+
+</body>
+</html>
