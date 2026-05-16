@@ -2,21 +2,32 @@
 <html>
 <head>
     <title>Spam Detector</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
+
 <body>
 
-<h2>Spam Detection App</h2>
+<div class="container">
 
-<a href="/logout">Logout</a>
+    <div class="header">
+        <h1>📩 Spam Detection AI</h1>
+        <p>Enter a message to check if it's spam or not</p>
+    </div>
 
-<form method="POST">
-    <input name="message" placeholder="Enter message" required>
-    <button type="submit">Check</button>
-</form>
+    <form method="POST">
+        <input name="message" placeholder="Type your message here..." required>
+        <button type="submit">Analyze</button>
+    </form>
 
-{% if result %}
-    <h3>{{ result }}</h3>
-{% endif %}
+    {% if result %}
+    <div class="result">
+        {{ result }}
+    </div>
+    {% endif %}
+
+    <a class="logout" href="/logout">Logout</a>
+
+</div>
 
 </body>
 </html>
